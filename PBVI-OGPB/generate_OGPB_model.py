@@ -114,4 +114,4 @@ df = model_counts(bamfiles, bedfile)
 print(df)
 
 
-df.to_csv('MODEL.' + chrom + '.txt', sep='\t')
+df.to_csv('MODEL.txt', sep='\t')
