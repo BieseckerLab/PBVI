@@ -17,6 +17,7 @@ The model can be built by modifying variables (see below) in the generate_OGPB_m
 
 * Control population BAM files: the BAM files with which to build the model.
 * BED file: the genomic locations to examine.
+
 '''python
 bamfiles = glob.glob('/BAM_FILE_DIRECTORY/*.bam') #CHANGE THIS TO THE DIRECTORY WHERE BAM FILES ARE, this will look for *bam files
 bedfile = 'OGPB_model_location.bed' #CHANGE THIS TO INPUT BEDFILE
