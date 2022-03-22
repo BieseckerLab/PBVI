@@ -13,32 +13,32 @@ The PBVI method involves two steps. First, a control population dataset is used 
 
 ### 1. Model building
 
-The model can be built by modifying variables (see below) in the generate_OGPB_model.py script. The following data are required for this step:
+The model can be built by modifying variables (see below) in the <code>generate_OGPB_model.py</code> script. The following data are required for this step:
 
 * Control population BAM files: the BAM files with which to build the model.
 * BED file: the genomic locations to examine.
 
-
-> bamfiles = glob.glob('/BAM_FILE_DIRECTORY/*.bam') #CHANGE THIS TO THE DIRECTORY WHERE BAM FILES ARE, this will look for \*bam files
+``` python
+> bamfiles = glob.glob('/BAM_FILE_DIRECTORY/*.bam') #CHANGE THIS TO THE DIRECTORY WHERE BAM FILES ARE, this will look for *bam files
 > bedfile = 'OGPB_model_location.bed' #CHANGE THIS TO INPUT BEDFILE
-
-The generate_OGPB_model.py script will create a data frame of aggregated counts and output this to a MODEL.txt file.
+```
+The <code>generate_OGPB_model.py</code> script will create a data frame of aggregated counts and output this to a MODEL.txt file.
 
 ### 2. Variant calling
 
-After building the model, the PBVI.py script can be modified (see below) to call variants in input BAM files. The following data are required for this step:
+After building the model, the <code>PBVI.py</code> script can be modified (see below) to call variants in input BAM files. The following data are required for this step:
 
-*Input BAM files: the BAM files in which to call variants.
-*BED file: the BED file used to build the model.
-*Reference genome file: a FASTA reference file.
-*Model text file: the MODEL.txt file output from the generate_OGPB_model.py script.
+* Input BAM files: the BAM files in which to call variants.
+* BED file: the BED file used to build the model.
+* Reference genome file: a FASTA reference file.
+* Model text file: the MODEL.txt file output from the <code>generate_OGPB_model.py</code> script.
 
-
+``` python
 > bamfiles = glob.glob('/BAM_FILE_DIRECTORY/*.bam') #CHANGE THIS TO THE DIRECTORY WHERE BAM FILES ARE, this will look for *bam files
 > bedfile = 'OGPB_model_location.bed' #CHANGE THIS TO INPUT BEDFILE
 > fastafile = 'hg19.fa' #CHANGE THIS TO FASTA REFERENCE FILE
 > posmodelfile = 'OGPB_model.txt' #CHANGE THIS TO MODEL FILE
+```
+For each input BAM file, the <code>PBVI.py</code> script will output a text file containing the called variants.
 
-For each input BAM file, the PBVI.py script will output a text file containing the called variants.
-
-The generate_OGPB_model.py and PBVI.py scripts are available in PBVO-OGPB directory.
+The <code>generate_OGPB_model.py</code> and <code>PBVI.py</code> scripts are available in PBVO-OGPB directory.
