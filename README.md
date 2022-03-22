@@ -19,7 +19,7 @@ The model can be built by modifying variables (see below) in the generate_OGPB_m
 * BED file: the genomic locations to examine.
 
 
-> bamfiles = glob.glob('/BAM_FILE_DIRECTORY/*.bam') #CHANGE THIS TO THE DIRECTORY WHERE BAM FILES ARE, this will look for *bam files
+> bamfiles = glob.glob('/BAM_FILE_DIRECTORY/*.bam') #CHANGE THIS TO THE DIRECTORY WHERE BAM FILES ARE, this will look for \*bam files
 > bedfile = 'OGPB_model_location.bed' #CHANGE THIS TO INPUT BEDFILE
 
 The generate_OGPB_model.py script will create a data frame of aggregated counts and output this to a MODEL.txt file.
